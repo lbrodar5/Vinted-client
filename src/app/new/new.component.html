@@ -3,7 +3,7 @@
         <app-carousel [imageUrls]="imageUrls"></app-carousel>
         <div class="row">
             <div class="col-lg-5 col-md-6 col-sm-7 col-12">
-                <input #fileinput style="display: none" type="file" accept="image/*" multiple class="form-control" capture="filesystem" (change)="onFilesSelected($event)">
+                <input #fileinput style="display: none" type="file" accept="image/*" multiple class="form-control" (change)="onFilesSelected($event)">
                 <button class="btn btn-primary" type="button" (click)="fileinput.click()">Upload images</button>
             </div>
         </div>
