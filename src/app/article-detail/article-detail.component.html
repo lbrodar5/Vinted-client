@@ -1,0 +1,16 @@
+<div *ngIf="article"  class="container">
+    <div class="row">
+        <div class="col-12">
+            <app-carousel [imageUrls]="imageUrls"></app-carousel>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>{{article.name}}</h3>
+            <p>Description: {{article.description}}</p>
+            <p>Condition: {{article.condition}}</p>
+            <p>Location: {{article.location}}</p>
+            <p>Contact: {{article.contact}}</p>
+            <p class="text-primary">€{{article.price}}</p>
+        </div>
+</div>

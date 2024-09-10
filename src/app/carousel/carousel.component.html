@@ -1,0 +1,23 @@
+<div *ngIf="imageUrls.length > 0" class="row">
+    <div class="col">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let url of imageUrls;let first = first" class="carousel-item" [ngClass]="{'active': first}">
+                <img [src]="sanitizeImageUrl(url)" class="d-block object-fit-contain w-100"  alt="..." style="height: 500px;">
+                </div>
+              </div>
+            <button  (click)="previousImg()" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button (click)="nextImg()" class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" >Next</span>
+            </button>
+        </div>
+          <div class="text-center">{{selectedImg}}/{{imageUrls.length}}</div>
+    </div>
+    <div class="text-center">
+      <a class="btn btn-primary" [href]="imageUrls[selectedImg-1]">Download image</a>
+  </div>
+</div>

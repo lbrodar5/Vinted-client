@@ -1,0 +1,8 @@
+<div class="container w-100 mt-3">
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-3 hehe" *ngFor="let article of articleService.articles; let i = index">
+            <app-article [article]="article" [routerLink]="[i]"></app-article>
+        </div>
+    </div>
+</div>
+

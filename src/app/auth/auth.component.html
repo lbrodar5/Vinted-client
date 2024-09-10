@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="mx-auto col-sm-8 col-md-4 col-lg-3">
+            <form #authForm = "ngForm" (ngSubmit)="onSubmit(authForm)">
+                <div class="form-group mb-3">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username"  placeholder="Enter username" 
+                  name="username"  ngModel >
+                </div>
+                <div class="form-group mb-3">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password"
+                  name="password" ngModel email>
+                </div>
+                <div class="text-center mb-3">
+                    <button *ngIf="login" type="submit" class="btn btn-primary" style="margin-top: 6px;">Login</button>
+                    <button *ngIf="!login" type="submit" class="btn btn-primary" style="margin-top: 6px;">Register</button>
+                </div>
+                
+              </form>
+              <div class="d-flex align-items-center">
+                <span *ngIf="login">Don't have an account?</span>
+                <span *ngIf="!login">Already have an account?</span>
+                <button *ngIf="!login"  type="button" class="btn text-primary" (click)="login = true">Login</button>
+                <button *ngIf="login"  type="button" class="btn text-primary" (click)="login = false">Register</button>
+                </div>
+                <p class="text-break text-danger text-center">{{authService.error}}</p>
+                <p class="text-break text-success text-center">{{authService.message}}</p>
+        </div>
+    </div>
+</div>

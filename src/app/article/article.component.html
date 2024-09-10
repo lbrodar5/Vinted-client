@@ -1,0 +1,12 @@
+<div class="card  px-3  py-1 rounded-0 mb-3" role="button">
+    <div class="card-header border-0 rounded-0 m-0 p-0">
+        {{article.username}}
+    </div>
+    <img [src]="articleService.url + '/api/image/' + article.images[0]" class="card-img-top object-fit-cover rounded-0" alt="..." height="200px">
+    <div class="card-body  m-0 p-0">
+      <p class="card-text m-0 p-0"><small class="text-body-secondary">{{article.name}}</small></p>
+      <p class="card-text m-0 p-0"><small class="text-body-secondary">{{article.description}} • {{article.condition}} </small></p>
+      <span class="card-text text-primary m-0 p-0"><small>€{{article.price}}</small></span>
+      <button *ngIf="router.url === '/user'" class="btn btn-outline-danger ms-3" (click)="deleteArticle()">Remove</button>
+    </div>
+  </div>

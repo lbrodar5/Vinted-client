@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand bg-body-tertiary" >
+    <div class="container">
+      <a class="navbar-brand" routerLink="/"><fa-icon [icon]="faBagShopping"></fa-icon> Vinted</a>
+        <div class="navbar-nav mb-0">
+          <span class="dropdown nav-item me-3" *ngIf="authService.isAuthorised()">
+            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"[routerLinkActive]="['active']" ><fa-icon [icon]="faUser"></fa-icon> {{authService.user.value.username}}</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  routerLink="/user">Your articles</a></li>
+            <li><a class="dropdown-item"  (click)="logoff()" routerLink="/">Sign out</a></li>
+          </ul>
+        </span>
+            <span class="nav-item me-3" *ngIf="authService.isAuthorised()">
+              <a class="nav-link" [routerLinkActive]="['active']"  routerLink="/new"><fa-icon [icon]="faPlus"></fa-icon> Sell</a>
+            </span>
+            <span *ngIf="!authService.isAuthorised()">
+              <button class="btn btn-outline-secondary" [routerLinkActive]="['active']" routerLink="/auth">Sign in</button>
+            </span>
+          </div>
+      </div>
+  </nav>
